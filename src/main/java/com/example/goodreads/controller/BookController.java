@@ -1,7 +1,8 @@
-package com.example.goodreads;
+package com.example.goodreads.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,10 +11,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.goodreads.model.Book;
+import com.example.goodreads.service.BookH2Service;
+
 
 @RestController
 public class BookController {
-    BookService bookService = new BookService();
+
+    @Autowired
+    public BookH2Service bookService;
 
     @GetMapping("/books")
     public ArrayList<Book> getBooks() {

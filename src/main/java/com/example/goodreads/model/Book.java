@@ -1,4 +1,4 @@
-package com.example.goodreads;
+package com.example.goodreads.model;
 
 public class Book {
     private int id;
