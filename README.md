@@ -22,16 +22,28 @@ It allows users to **manage books** with CRUD operations. The data is stored in 
 ---
 
 ## **Project Structure**
+
     goodreads/
     ├── src/
     │ └── main/java/com/example/goodreads/
-    │ ├── Book.java
-    │ ├── BookController.java
-    │ ├── BookRepository.java
-    │ ├── BookService.java
+    │ ├── controller/
+    │ │ └── BookController.java
+    │ ├── model/
+    │ │ ├── Book.java
+    │ │ └── BookRowMapper.java
+    │ ├── repository/
+    │ │ └── BookRepository.java
+    │ ├── service/
+    │ │ └── BookH2Service.java
     │ └── GoodreadsApplication.java
-    ├── pom.xml
-    └── README.md
+    │
+    │ └── resources/
+    │ └── application.properties
+    ├── test/
+    ├── target/
+    ├── .gitattributes
+    ├── .gitignore
+    └── HELP.md
 
 
 ---
