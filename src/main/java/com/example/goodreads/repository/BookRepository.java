@@ -6,8 +6,12 @@ import com.example.goodreads.model.Book;
 
 public interface BookRepository {
     ArrayList<Book> getBooks();
+
     Book getBookById(int bookId);
+
     Book addBook(Book book);
+
     Book updateBook(int bookId, Book book);
-    public void deleteBook(int bookId);
+
+    void deleteBook(int bookId);
 }

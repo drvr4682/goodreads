@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.goodreads.model.Book;
-import com.example.goodreads.service.BookH2Service;
-
+import com.example.goodreads.service.BookJpaService;
 
 @RestController
 public class BookController {
 
     @Autowired
-    public BookH2Service bookService;
+    public BookJpaService bookService;
 
     @GetMapping("/books")
     public ArrayList<Book> getBooks() {
@@ -34,15 +33,15 @@ public class BookController {
     @PostMapping("/books")
     public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
-    } 
-   
+    }
+
     @PutMapping("/books/{bookId}")
     public Book updateBook(@PathVariable("bookId") int bookId, @RequestBody Book book) {
         return bookService.updateBook(bookId, book);
     }
 
     @DeleteMapping("/books/{bookId}")
-    public void deleteBook(@PathVariable("bookId") int bookId){
+    public void deleteBook(@PathVariable("bookId") int bookId) {
         bookService.deleteBook(bookId);
     }
 }
