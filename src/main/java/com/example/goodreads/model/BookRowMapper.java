@@ -5,14 +5,12 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-
-public class BookRowMapper implements RowMapper<Book>{
+public class BookRowMapper implements RowMapper<Book> {
     @Override
     public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new Book(
                 rs.getInt("id"),
                 rs.getString("name"),
-                rs.getString("imageUrl")
-        );
+                rs.getString("imageUrl"));
     }
 }
